@@ -1,0 +1,9 @@
+out
+.idea/
+node_modules
+.vscode-test/
+*.vsix
+.vscode/
+src/DokiThemeDefinitions.ts
+src/ChangelogHtml.ts
+generatedThemes/*.json

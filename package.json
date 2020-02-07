@@ -1,0 +1,17 @@
+{
+  "name": "doki-theme-assets",
+  "version": "1.0.0",
+  "description": "Storage shed for all doki theme assets",
+  "main": "index.ts",
+  "repository": "git@github.com:cyclic-reference/doki-theme-assets.git",
+  "author": "DATBOI <alexsimons9999@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@types/node": "^13.7.0",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.613.0"
+  }
+}
