@@ -8,10 +8,11 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
+    "@types/aws-sdk": "^2.7.0",
     "@types/node": "^13.7.0",
     "typescript": "^3.7.5"
   },
   "dependencies": {
-    "aws-sdk": "^2.613.0"
+    "aws-sdk": "^2.614.0"
   }
 }
