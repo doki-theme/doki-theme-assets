@@ -31,6 +31,10 @@ function createChecksum(data: Buffer): string {
 interface StringDictionary<T> {
     [key: string]: T
 }
+const syncedAssets: StringDictionary<string> =
+            JSON.parse(
+                fs.readFileSync(path.join(__dirname, '..', 'syncedAssets.json'), 'utf-8'));
+
 Promise.all(
     assetDirectories.map(directory =>
         walkDir(path.join(__dirname, '..', directory)))
@@ -62,8 +66,28 @@ Promise.all(
         )
     )
     .then(assetToCheckSum => {
-        return assetToCheckSum;
+        return Object.keys(assetToCheckSum)
+            .filter(assetPath =>
+                !syncedAssets[assetPath] ||
+                syncedAssets[assetPath] !== assetToCheckSum[assetPath]
+            )
+            .map(changedAsset => ({
+                key: changedAsset,
+                value: assetToCheckSum[changedAsset]
+            })
+            )
+            .reduce((accum: StringDictionary<string>, kv) => {
+                accum[kv.key] = kv.value;
+                return accum
+            }, {});
+
     })
     .then(allNewAssets => {
         console.log(allNewAssets);
+        fs.writeFileSync(path.join(
+            __dirname, '..', 'syncedAssets.json'
+        ), JSON.stringify({
+            ...syncedAssets,
+            ...allNewAssets
+        }, null, 2), 'utf8');
     })
