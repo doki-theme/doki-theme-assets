@@ -47,7 +47,7 @@ function buildKey(filePath: string): string {
 aws.config.update({ region: 'us-east-1' });
 const s3 = new aws.S3();
 
-const doWork = (workToBeDone: [string, string][]): Promise<[string, string][]> => {
+const uploadUnsyncedAssets = (workToBeDone: [string, string][]): Promise<[string, string][]> => {
     const next = workToBeDone.pop();
     if (next) {
         const [filePath,] = next;
@@ -72,7 +72,7 @@ const doWork = (workToBeDone: [string, string][]): Promise<[string, string][]> =
                 }
             })
         })
-            .then(workResult => doWork(workToBeDone).then(others => {
+            .then(workResult => uploadUnsyncedAssets(workToBeDone).then(others => {
                 if (workResult) {
                     others.push(next)
                 }
@@ -116,9 +116,11 @@ Promise.all(
     )
     .then(assetToCheckSum => {
         return Object.keys(assetToCheckSum)
-            .filter(assetPath =>
-                !syncedAssets[assetPath] ||
-                syncedAssets[assetPath] !== assetToCheckSum[assetPath]
+            .filter(assetPath => {
+                const assetKey = buildKey(assetPath)
+                return !syncedAssets[assetKey] ||
+                    syncedAssets[assetKey] !== assetToCheckSum[assetPath]
+            }
             )
             .map(changedAsset => ({
                 key: changedAsset,
@@ -132,12 +134,14 @@ Promise.all(
 
     })
     .then(allNewAssets => {
-        return doWork(Object.entries(allNewAssets))
-            .then(syncedAssets => syncedAssets.reduce((accum: StringDictionary<string>, kva) => {
-                const [key, value] = kva;
-                accum[key] = value;
-                return accum;
-            }, {})
+        return uploadUnsyncedAssets(Object.entries(allNewAssets))
+            .then(syncedAssets => syncedAssets
+                .map(([key, value]) => ([buildKey(key), value]))
+                .reduce((accum: StringDictionary<string>, kva) => {
+                    const [key, value] = kva;
+                    accum[key] = value;
+                    return accum;
+                }, {})
             )
             .then(syncedAssetDictionary => {
                 fs.writeFileSync(path.join(
