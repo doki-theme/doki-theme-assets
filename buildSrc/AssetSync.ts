@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import crypto from 'crypto';
+import crypto, { generateKeyPair } from 'crypto';
+import aws from 'aws-sdk';
 
 const assetDirectories = [
     'backgrounds',
@@ -31,13 +32,61 @@ function createChecksum(data: Buffer): string {
 interface StringDictionary<T> {
     [key: string]: T
 }
+
+const rootDirectory =
+    path.join(__dirname, '..')
+
 const syncedAssets: StringDictionary<string> =
-            JSON.parse(
-                fs.readFileSync(path.join(__dirname, '..', 'syncedAssets.json'), 'utf-8'));
+    JSON.parse(
+        fs.readFileSync(path.join(rootDirectory, 'syncedAssets.json'), 'utf-8'));
+
+function buildKey(filePath: string): string {
+    return filePath.substr(rootDirectory.length)
+}
+
+aws.config.update({ region: 'us-east-1' });
+const s3 = new aws.S3();
+
+const doWork = (workToBeDone: [string, string][]): Promise<[string, string][]> => {
+    const next = workToBeDone.pop();
+    if (next) {
+        const [filePath,] = next;
+        return new Promise<boolean>((res) => {
+            const fileStream = fs.createReadStream(filePath)
+            fileStream.on('error', err => {
+                console.warn(`Unable to open stream for ${next} for raisins ${err}`);
+                res(false);
+            });
+
+            console.info(`Uploading ${filePath}`);
+            s3.upload({
+                Bucket: 'doki-theme-assets',
+                Key: buildKey(filePath),
+                Body: fileStream
+            }, (err) => {
+                if (err) {
+                    console.warn(`Unable to upload ${next} to s3 for raisins ${err}`)
+                    res(false);
+                } else {
+                    res(true);
+                }
+            })
+        })
+            .then(workResult => doWork(workToBeDone).then(others => {
+                if (workResult) {
+                    others.push(next)
+                }
+                return others;
+            }))
+    } else {
+        return Promise.resolve([]);
+    }
+};
+
 
 Promise.all(
     assetDirectories.map(directory =>
-        walkDir(path.join(__dirname, '..', directory)))
+        walkDir(path.join(rootDirectory, directory)))
 )
     .then(directories => directories.reduce((accum, dirs) => accum.concat(dirs), []))
     .then(allAssets =>
@@ -83,11 +132,19 @@ Promise.all(
 
     })
     .then(allNewAssets => {
-        console.log(allNewAssets);
-        fs.writeFileSync(path.join(
-            __dirname, '..', 'syncedAssets.json'
-        ), JSON.stringify({
-            ...syncedAssets,
-            ...allNewAssets
-        }, null, 2), 'utf8');
+        return doWork(Object.entries(allNewAssets))
+            .then(syncedAssets => syncedAssets.reduce((accum: StringDictionary<string>, kva) => {
+                const [key, value] = kva;
+                accum[key] = value;
+                return accum;
+            }, {})
+            )
+            .then(syncedAssetDictionary => {
+                fs.writeFileSync(path.join(
+                    __dirname, '..', 'syncedAssets.json'
+                ), JSON.stringify({
+                    ...syncedAssets,
+                    ...syncedAssetDictionary
+                }, null, 2), 'utf8');
+            })
     })
