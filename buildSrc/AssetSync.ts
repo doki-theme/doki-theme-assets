@@ -6,6 +6,7 @@ import aws from 'aws-sdk';
 const assetDirectories = [
     'backgrounds',
     'stickers',
+    'screenshots',
 ]
 
 async function walkDir(dir: string): Promise<string[]> {
