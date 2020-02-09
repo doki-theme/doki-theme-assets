@@ -7,6 +7,9 @@
   "author": "DATBOI <alexsimons9999@gmail.com>",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "sync": "ts-node buildSrc/AssetSync.ts"
+  },
   "devDependencies": {
     "@types/aws-sdk": "^2.7.0",
     "@types/node": "^13.7.0",

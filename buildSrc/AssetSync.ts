@@ -41,7 +41,7 @@ const syncedAssets: StringDictionary<string> =
         fs.readFileSync(path.join(rootDirectory, 'syncedAssets.json'), 'utf-8'));
 
 function buildKey(filePath: string): string {
-    return filePath.substr(rootDirectory.length)
+    return filePath.substr(rootDirectory.length + 1)
 }
 
 aws.config.update({ region: 'us-east-1' });
@@ -62,7 +62,8 @@ const uploadUnsyncedAssets = (workToBeDone: [string, string][]): Promise<[string
             s3.upload({
                 Bucket: 'doki-theme-assets',
                 Key: buildKey(filePath),
-                Body: fileStream
+                Body: fileStream,
+                ACL: 'public-read',
             }, (err) => {
                 if (err) {
                     console.warn(`Unable to upload ${next} to s3 for raisins ${err}`)
