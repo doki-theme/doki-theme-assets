@@ -59,7 +59,7 @@
   "stickers/vscode/literature/monika/dark/just_monika_dark_joy.png": "2abd9f9196261ef75ed52dc851eaed4e",
   "stickers/vscode/literature/monika/dark/just_monika_dark_normal.png": "a3bbbc877308143f9b2b651915810a66",
   "stickers/vscode/literature/monika/light/just_monika.png": "6e040dadf6116fb6f55b7b2c73254b38",
-  "stickers/vscode/literature/monika/light/just_monika_joy.png": "2d30667e5756019153cbe10260932040",
+  "stickers/vscode/literature/monika/light/just_monika_joy.png": "06cc330c1b54c0be6b4eca4626c930a2",
   "stickers/vscode/literature/natsuki/dark/natsuki_dark.png": "60eac8b329b8f542c8aa0f391b02023f",
   "stickers/vscode/literature/natsuki/dark/natsuki_dark_normal.png": "06ee219146e00ed6c44d3cecf07b7bad",
   "stickers/vscode/literature/natsuki/light/natsuki.png": "41463056c21f7d236557b6e57cfc8e98",
@@ -75,5 +75,6 @@
   "stickers/vscode/reZero/beatrice/beatrice.png": "d7622e5f4f20ab00729997a582250ee3",
   "stickers/vscode/reZero/ram/ram.png": "61f2b3d69eaedd5cbd3238c4f395ce94",
   "stickers/vscode/reZero/rem/rem.png": "bf47486d06a32485f3608aa5c3af40ef",
-  "screenshots/doki-theme-vscode-usage.gif": "74491e4101b5ba4598308a01fdfc521d"
+  "screenshots/doki-theme-vscode-usage.gif": "74491e4101b5ba4598308a01fdfc521d",
+  "misc/logo.png": "e3ea6b32f50cf76f00d299473318dbfb"
 }

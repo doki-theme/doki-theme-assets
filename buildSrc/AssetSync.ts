@@ -7,6 +7,7 @@ const assetDirectories = [
     'backgrounds',
     'stickers',
     'screenshots',
+    'misc',
 ]
 
 async function walkDir(dir: string): Promise<string[]> {
