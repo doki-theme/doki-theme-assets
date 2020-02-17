@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import crypto, { generateKeyPair } from 'crypto';
 import aws from 'aws-sdk';
+import FileType from 'file-type';
 
 const assetDirectories = [
     'backgrounds',
@@ -53,34 +54,38 @@ const uploadUnsyncedAssets = (workToBeDone: [string, string][]): Promise<[string
     const next = workToBeDone.pop();
     if (next) {
         const [filePath,] = next;
-        return new Promise<boolean>((res) => {
-            const fileStream = fs.createReadStream(filePath)
-            fileStream.on('error', err => {
-                console.warn(`Unable to open stream for ${next} for raisins ${err}`);
-                res(false);
-            });
+        return FileType.fromFile(filePath)
+            .then(fileType => {
+                return new Promise<boolean>((res) => {
+                    const fileStream = fs.createReadStream(filePath)
+                    fileStream.on('error', err => {
+                        console.warn(`Unable to open stream for ${next} for raisins ${err}`);
+                        res(false);
+                    });
 
-            console.info(`Uploading ${filePath}`);
-            s3.upload({
-                Bucket: 'doki-theme-assets',
-                Key: buildKey(filePath),
-                Body: fileStream,
-                ACL: 'public-read',
-            }, (err) => {
-                if (err) {
-                    console.warn(`Unable to upload ${next} to s3 for raisins ${err}`)
-                    res(false);
-                } else {
-                    res(true);
-                }
+                    console.info(`Uploading ${filePath}`);
+                    s3.upload({
+                        Bucket: 'doki-theme-assets',
+                        Key: buildKey(filePath),
+                        Body: fileStream,
+                        ACL: 'public-read',
+                        ContentType: fileType?.mime
+                    }, (err) => {
+                        if (err) {
+                            console.warn(`Unable to upload ${next} to s3 for raisins ${err}`)
+                            res(false);
+                        } else {
+                            res(true);
+                        }
+                    })
+                })
+                    .then(workResult => uploadUnsyncedAssets(workToBeDone).then(others => {
+                        if (workResult) {
+                            others.push(next)
+                        }
+                        return others;
+                    }))
             })
-        })
-            .then(workResult => uploadUnsyncedAssets(workToBeDone).then(others => {
-                if (workResult) {
-                    others.push(next)
-                }
-                return others;
-            }))
     } else {
         return Promise.resolve([]);
     }

@@ -12,10 +12,12 @@
   },
   "devDependencies": {
     "@types/aws-sdk": "^2.7.0",
+    "@types/file-type": "^10.9.1",
     "@types/node": "^13.7.0",
     "typescript": "^3.7.5"
   },
   "dependencies": {
-    "aws-sdk": "^2.614.0"
+    "aws-sdk": "^2.614.0",
+    "file-type": "^14.1.2"
   }
 }
