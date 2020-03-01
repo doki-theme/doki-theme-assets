@@ -30,6 +30,7 @@ const downloadUnsyncedAssets = (workToBeDone: string[]): Promise<string[]> => {
           res(false);
         })
         .on('close', () => {
+          console.log(`Successfully downloaded ${filePath}`);
           res(true);
         });
     })
@@ -48,12 +49,15 @@ const downloadUnsyncedAssets = (workToBeDone: string[]): Promise<string[]> => {
 interface AssetDownloadDecision {
   assetPath: string,
   notDownloaded?: boolean,
-  checksumDifferent?: boolean,
+  checkSumDifferent?: boolean,
 }
 
+console.log('Starting asset download process.');
+console.log('Calculating deltas.');
 Promise.all(
   toPairs<string>(syncedAssets).map(([assetPath, savedChecksum]) => {
       if (!fs.existsSync(assetPath)) {
+        console.log(`Remote asset ${assetPath} does not exist locally`);
         return Promise.resolve<AssetDownloadDecision>({
           assetPath,
           notDownloaded: true
@@ -69,20 +73,27 @@ Promise.all(
           });
         })
           .then(createChecksum)
-          .then(localChecksum => ({
-            assetPath,
-            checkSumDifferent: localChecksum !== savedChecksum
-          }));
+          .then(localChecksum => {
+            const checkSumDifferent = localChecksum !== savedChecksum;
+            if (checkSumDifferent) {
+              console.log(`Local asset ${assetPath} is different from the remote asset.`);
+            }
+            return ({
+              assetPath,
+              checkSumDifferent: checkSumDifferent
+            });
+          });
       }
     }
   )
-).then((assetToCheckSums) =>
-  assetToCheckSums
-    .filter(descision => descision.notDownloaded || descision.checksumDifferent)
-    .map(decision => decision.assetPath)
-).then(assetsToDownload => {
-  return downloadUnsyncedAssets(assetsToDownload);
-}).then(() => {
-  console.log('Asset Download Complete');
-});
+)
+  .then((assetToCheckSums) =>
+    assetToCheckSums
+      .filter(decision => decision.notDownloaded || decision.checkSumDifferent)
+      .map(decision => decision.assetPath)
+  )
+  .then(assetsToDownload => downloadUnsyncedAssets(assetsToDownload))
+  .then(() => {
+    console.log('Asset Download Complete');
+  });
 

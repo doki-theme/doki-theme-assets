@@ -2,7 +2,9 @@ import fs from "fs";
 import path from "path";
 import crypto from "crypto";
 import aws from "aws-sdk";
-import {rootDirectory} from "./AssetUpload";
+
+export const rootDirectory =
+  path.join(__dirname, '..');
 
 export const assetDirectories = [
   'backgrounds',
@@ -40,5 +42,6 @@ export const buildS3Client = () => {
   aws.config.update({region: 'us-east-1'});
   return new aws.S3();
 };
+
 export const getSyncedAssets = () => JSON.parse(
   fs.readFileSync(path.join(rootDirectory, 'syncedAssets.json'), 'utf-8'));
