@@ -1,54 +1,27 @@
 import fs from 'fs';
 import path from 'path';
-import crypto, { generateKeyPair } from 'crypto';
-import aws from 'aws-sdk';
 import FileType from 'file-type';
+import {
+  assetDirectories,
+  buildS3Client,
+  createChecksum,
+  getSyncedAssets,
+  StringDictionary,
+  walkDir
+} from "./AssetTools";
 
-const assetDirectories = [
-    'backgrounds',
-    'stickers',
-    'screenshots',
-    'misc',
-];
-
-async function walkDir(dir: string): Promise<string[]> {
-    const values: Promise<string[]>[] = fs.readdirSync(dir)
-        .map((file: string) => {
-            const dirPath: string = path.join(dir, file);
-            const isDirectory = fs.statSync(dirPath).isDirectory();
-            if (isDirectory) {
-                return walkDir(dirPath);
-            } else {
-                return Promise.resolve([path.join(dir, file)]);
-            }
-        });
-    const scannedDirectories = await Promise.all(values);
-    return scannedDirectories.reduce((accum, files) => accum.concat(files), []);
-}
-
-function createChecksum(data: Buffer): string {
-    return crypto.createHash('md5')
-        .update(data)
-        .digest('hex');
-}
-
-interface StringDictionary<T> {
-    [key: string]: T
-}
-
-const rootDirectory =
+export const rootDirectory =
     path.join(__dirname, '..');
 
 const syncedAssets: StringDictionary<string> =
-    JSON.parse(
-        fs.readFileSync(path.join(rootDirectory, 'syncedAssets.json'), 'utf-8'));
+    getSyncedAssets();
 
 function buildKey(filePath: string): string {
     return filePath.substr(rootDirectory.length + 1)
 }
 
-aws.config.update({ region: 'us-east-1' });
-const s3 = new aws.S3();
+
+const s3 = buildS3Client();
 
 const uploadUnsyncedAssets = (workToBeDone: [string, string][]): Promise<[string, string][]> => {
     const next = workToBeDone.pop();

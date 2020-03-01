@@ -14,11 +14,13 @@
   "devDependencies": {
     "@types/aws-sdk": "^2.7.0",
     "@types/file-type": "^10.9.1",
+    "@types/lodash": "^4.14.149",
     "@types/node": "^13.7.0",
     "typescript": "^3.7.5"
   },
   "dependencies": {
     "aws-sdk": "^2.614.0",
-    "file-type": "^14.1.2"
+    "file-type": "^14.1.2",
+    "lodash": "^4.17.15"
   }
 }
