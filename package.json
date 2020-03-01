@@ -8,7 +8,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "sync": "ts-node buildSrc/AssetSync.ts"
+    "upload": "ts-node buildSrc/AssetUpload.ts",
+    "download": "ts-node buildSrc/AssetDownload.ts"
   },
   "devDependencies": {
     "@types/aws-sdk": "^2.7.0",

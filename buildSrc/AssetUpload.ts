@@ -9,7 +9,7 @@ const assetDirectories = [
     'stickers',
     'screenshots',
     'misc',
-]
+];
 
 async function walkDir(dir: string): Promise<string[]> {
     const values: Promise<string[]>[] = fs.readdirSync(dir)
@@ -37,7 +37,7 @@ interface StringDictionary<T> {
 }
 
 const rootDirectory =
-    path.join(__dirname, '..')
+    path.join(__dirname, '..');
 
 const syncedAssets: StringDictionary<string> =
     JSON.parse(
@@ -57,7 +57,7 @@ const uploadUnsyncedAssets = (workToBeDone: [string, string][]): Promise<[string
         return FileType.fromFile(filePath)
             .then(fileType => {
                 return new Promise<boolean>((res) => {
-                    const fileStream = fs.createReadStream(filePath)
+                    const fileStream = fs.createReadStream(filePath);
                     fileStream.on('error', err => {
                         console.warn(`Unable to open stream for ${next} for raisins ${err}`);
                         res(false);
