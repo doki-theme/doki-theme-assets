@@ -28,7 +28,7 @@ export async function walkDir(dir: string): Promise<string[]> {
   return scannedDirectories.reduce((accum, files) => accum.concat(files), []);
 }
 
-export function createChecksum(data: Buffer): string {
+export function createChecksum(data: Buffer | string): string {
   return crypto.createHash('md5')
     .update(data)
     .digest('hex');

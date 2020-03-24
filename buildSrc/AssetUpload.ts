@@ -77,45 +77,45 @@ Promise.all(
 )
   .then(directories => directories.reduce((accum, dirs) => accum.concat(dirs), []))
   .then(allAssets => {
-      console.log('Calculating differences');
-      return Promise.all(
-        allAssets.map(assetPath =>
-          new Promise<Buffer>((res, rej) =>
-            fs.readFile(assetPath, (err, dat) => {
-              if (err) {
-                rej(err);
-              } else {
-                res(dat);
-              }
-            }))
-            .then(createChecksum)
-            .then(checkSum => ({
-              assetPath,
-              checkSum
-            }))
-        )
-      ).then((assetToCheckSums) =>
-        assetToCheckSums.reduce(
-          (accum: StringDictionary<string>, assetToChecksum) => {
-            accum[assetToChecksum.assetPath] = assetToChecksum.checkSum;
-            return accum;
-          }, {})
-      );
-    }
+    console.log('Calculating differences');
+    return Promise.all(
+      allAssets.map(assetPath =>
+        new Promise<Buffer>((res, rej) =>
+          fs.readFile(assetPath, (err, dat) => {
+            if (err) {
+              rej(err);
+            } else {
+              res(dat);
+            }
+          }))
+          .then(createChecksum)
+          .then(checkSum => ({
+            assetPath,
+            checkSum
+          }))
+      )
+    ).then((assetToCheckSums) =>
+      assetToCheckSums.reduce(
+        (accum: StringDictionary<string>, assetToChecksum) => {
+          accum[assetToChecksum.assetPath] = assetToChecksum.checkSum;
+          return accum;
+        }, {})
+    );
+  }
   )
   .then(assetToCheckSum => {
     console.log('Calculating Deltas');
     return Object.keys(assetToCheckSum)
       .filter(assetPath => {
-          const assetKey = buildKey(assetPath);
-          return !syncedAssets[assetKey] ||
-            syncedAssets[assetKey] !== assetToCheckSum[assetPath];
-        }
+        const assetKey = buildKey(assetPath);
+        return !syncedAssets[assetKey] ||
+          syncedAssets[assetKey] !== assetToCheckSum[assetPath];
+      }
       )
       .map(changedAsset => ({
-          key: changedAsset,
-          value: assetToCheckSum[changedAsset]
-        })
+        key: changedAsset,
+        value: assetToCheckSum[changedAsset]
+      })
       )
       .reduce((accum: StringDictionary<string>, kv) => {
         console.log(`${kv.key} is new or changed`);
@@ -127,22 +127,28 @@ Promise.all(
   .then(allNewAssets => {
     console.log('Writing checksums for changed files');
     const assetFilesToUpload = toPairs(allNewAssets)
-      .filter(([assetPath, _]) => !assetPath.endsWith('.checksum.txt'));
-    assetFilesToUpload
-    .forEach(([assetPath, checksum])=>{
-      fs.writeFileSync(path.resolve(
-        `${assetPath}.checksum.txt`
-      ), checksum, 'utf8')
-    });
+      .filter(([assetPath, _]) => !assetPath.endsWith('.checksum.txt'))
+      .map(([assetPath, checksum]) => {
+        const assetCheckSumPath = `${assetPath}.checksum.txt`;
+        fs.writeFileSync(path.resolve(
+          assetCheckSumPath
+        ), checksum, 'utf8')
+        const checkSumCheckSum = // yo dawg.
+          createChecksum(
+            fs.readFileSync(
+              assetCheckSumPath, 'utf8'
+            )
+          );
+        return [assetCheckSumPath, checkSumCheckSum]
+      });
 
     return {
       ...allNewAssets,
-      ...assetFilesToUpload.map(([assetPath, _])=>
-      `${assetPath}.checksum.txt`
-      ).reduce((accum: any, next)=> {
-        accum[next] = next;
-        return accum;
-      }, {})
+      ...assetFilesToUpload
+        .reduce((accum: any, [assetCheckSumPath, checkSumCheckSum]) => {
+          accum[assetCheckSumPath] = checkSumCheckSum;
+          return accum;
+        }, {})
     };
   })
   .then(allNewAssets => {
