@@ -9,6 +9,7 @@ import {
   StringDictionary,
   walkDir
 } from "./AssetTools";
+import toPairs from 'lodash/toPairs';
 
 const syncedAssets: StringDictionary<string> =
   getSyncedAssets();
@@ -122,6 +123,27 @@ Promise.all(
         return accum;
       }, {});
 
+  })
+  .then(allNewAssets => {
+    console.log('Writing checksums for changed files');
+    const assetFilesToUpload = toPairs(allNewAssets)
+      .filter(([assetPath, _]) => !assetPath.endsWith('.checksum.txt'));
+    assetFilesToUpload
+    .forEach(([assetPath, checksum])=>{
+      fs.writeFileSync(path.resolve(
+        `${assetPath}.checksum.txt`
+      ), checksum, 'utf8')
+    });
+
+    return {
+      ...allNewAssets,
+      ...assetFilesToUpload.map(([assetPath, _])=>
+      `${assetPath}.checksum.txt`
+      ).reduce((accum: any, next)=> {
+        accum[next] = next;
+        return accum;
+      }, {})
+    };
   })
   .then(allNewAssets => {
     console.log('Staring asset sync');
