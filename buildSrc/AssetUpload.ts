@@ -26,6 +26,44 @@ const uploadUnsyncedAssets = (workToBeDone: [string, string][]): Promise<[string
   if (next) {
     const [filePath,] = next;
     return FileType.fromFile(filePath)
+    .then((fileType: any) => {
+      if(filePath.endsWith('.svg')){
+        return {mime: 'image/svg+xml'};
+      }
+      
+      if (!fileType && filePath.endsWith(".xml")) {
+        return { mime: "application/xml" };
+      }
+
+      if (
+        !fileType &&
+        (filePath.endsWith(".map") || filePath.endsWith(".txt"))
+      ) {
+        return { mime: "text/plain" };
+      }
+
+      if (!fileType && filePath.endsWith(".css")) {
+        return { mime: "text/css" };
+      }
+
+      if (!fileType && filePath.endsWith(".html")) {
+        return { mime: "text/html" };
+      }
+
+      if (!fileType && filePath.endsWith(".json")) {
+        return { mime: "application/json" };
+      }
+
+      if (!fileType && filePath.endsWith(".js")) {
+        return { mime: "application/javascript" };
+      }
+
+      if (!fileType) {
+        throw Error(`File ${filePath} does not have a type!!`);
+      }
+
+      return fileType;
+    })
       .then(fileType => {
         return new Promise<boolean>((res) => {
           const fileStream = fs.createReadStream(filePath);
@@ -41,7 +79,7 @@ const uploadUnsyncedAssets = (workToBeDone: [string, string][]): Promise<[string
             Body: fileStream,
             ACL: 'public-read',
             ContentType: fileType?.mime
-          }, (err) => {
+          }, (err: any) => {
             if (err) {
               console.warn(`Unable to upload ${next} to s3 for raisins ${err}`);
               res(false);
