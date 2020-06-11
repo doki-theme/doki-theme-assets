@@ -241,12 +241,16 @@
   "stickers/jetbrains/konoSuba/darkness/light/darkness_light.png.checksum.txt": "6342e31c6767831879fb42bc690e6e52",
   "stickers/jetbrains/luckyStar/konata/dark/konata_dark.png.checksum.txt": "459781925bf50289c866f201b9fdfc06",
   "stickers/jetbrains/swordArtOnline/asuna/light/asuna_light.png.checksum.txt": "fe133b6bb58bdd5d925a8def60595a8a",
-  "stickers/jetbrains/luckyStar/konata/light/konata_light.png": "717fbfe0cb70880e07ae53ab4d64387d",
-  "stickers/jetbrains/luckyStar/konata/light/konata_light.png.checksum.txt": "a0e247c68e99e399a75f999e47584ad6",
+  "stickers/jetbrains/luckyStar/konata/light/konata_light.png": "25771fcfa269538f5cdebccafa105e95",
+  "stickers/jetbrains/luckyStar/konata/light/konata_light.png.checksum.txt": "9be3cf89e18a0ff0c93ec86910a85fd0",
   "backgrounds/konata_light.png": "198963fedc05df2a94f88b570d293a98",
   "backgrounds/konata_light_secondary.png": "c68c0469f4647414acc4011f0a901931",
   "stickers/jetbrains/luckyStar/konata/light/konata_light_secondary.png": "c75d935740bfb99bdcd14549796b3d50",
   "backgrounds/konata_light.png.checksum.txt": "f2f3aa08b107cfbb40635d6d7700a228",
   "backgrounds/konata_light_secondary.png.checksum.txt": "07a522577fb4bea57791e694830c84cc",
-  "stickers/jetbrains/luckyStar/konata/light/konata_light_secondary.png.checksum.txt": "1a6d3954b9141e2646c9a21c2dd997fc"
+  "stickers/jetbrains/luckyStar/konata/light/konata_light_secondary.png.checksum.txt": "1a6d3954b9141e2646c9a21c2dd997fc",
+  "misc/v8_girls.png": "ad4ad64647faa81e9be0a9592f352018",
+  "misc/v8_girls.png.checksum.txt": "263df89b5eea211b12cb253035a4fca4",
+  "backgrounds/v8_girls.png": "ad4ad64647faa81e9be0a9592f352018",
+  "backgrounds/v8_girls.png.checksum.txt": "263df89b5eea211b12cb253035a4fca4"
 }
