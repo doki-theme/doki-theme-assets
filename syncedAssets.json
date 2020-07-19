@@ -203,8 +203,8 @@
   "misc/logo.png.checksum.txt": "20b5893216e7b91b16b8ccaecd66b9eb",
   "screenshots/doki-theme-jetbrains-sample.png": "fbed2f1964b9571debe1f936d3383d24",
   "screenshots/doki-theme-jetbrains-sample.png.checksum.txt": "8adc4abb3a2f689b38cd49e330d9f906",
-  "screenshots/doki-theme-hyper-usage.gif": "2c9b4ad5f5fd82cfda29ee664e4e1ed3",
-  "screenshots/doki-theme-hyper-usage.gif.checksum.txt": "67ca26788e16dc07ddd96b27dec2e1e1",
+  "screenshots/doki-theme-hyper-usage.gif": "dd932fe7475d2355a17e2fd39f08c30e",
+  "screenshots/doki-theme-hyper-usage.gif.checksum.txt": "e964fcc26070833753f84e3df26de56e",
   "screenshots/doki-theme-jetbrains-themes.gif": "7ab4d62cb4a27d474ab08d649ed19c9d",
   "screenshots/doki-theme-jetbrains-themes.gif.checksum.txt": "6d45e24cc1e42de2a4f9d7657cc1408e",
   "backgrounds/cleo.png": "384f2612698460c6f3bc7d5eaf355869",
@@ -276,5 +276,7 @@
   "stickers/jetbrains/eva/misato/dark/misato_dark.png.checksum.txt": "45256a121f8b627e548803a2c5281a6a",
   "stickers/vscode/eva/misato/dark/misato_dark.png.checksum.txt": "7818a1400e892838a31cb6e548ab77a6",
   "misc/v9_girl.png": "902f32e77c997d1d5d9f042a857e9bd7",
-  "misc/v9_girl.png.checksum.txt": "6c89c55da7d45ebe847a0cc7fc37144a"
+  "misc/v9_girl.png.checksum.txt": "6c89c55da7d45ebe847a0cc7fc37144a",
+  "misc/update_celebration.gif": "f4170aacd4b3cc12cf64bdbe0114ccf7",
+  "misc/update_celebration.gif.checksum.txt": "0ec4be0d1a47b52cd43a383ab58bdf38"
 }
