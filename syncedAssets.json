@@ -278,5 +278,19 @@
   "misc/v9_girl.png": "902f32e77c997d1d5d9f042a857e9bd7",
   "misc/v9_girl.png.checksum.txt": "6c89c55da7d45ebe847a0cc7fc37144a",
   "misc/update_celebration.gif": "f4170aacd4b3cc12cf64bdbe0114ccf7",
-  "misc/update_celebration.gif.checksum.txt": "0ec4be0d1a47b52cd43a383ab58bdf38"
+  "misc/update_celebration.gif.checksum.txt": "0ec4be0d1a47b52cd43a383ab58bdf38",
+  "backgrounds/kanna_dark.png": "43d2df1a2520bbadfe57690250f39954",
+  "stickers/jetbrains/dragonMaid/kanna/dark/kanna_dark.png": "fa4e88154dcfe03c1e1d276cb8523abf",
+  "backgrounds/kanna_dark.png.checksum.txt": "bbefd37e5db2e544c6f155396c3fbacf",
+  "stickers/jetbrains/dragonMaid/kanna/dark/kanna_dark.png.checksum.txt": "bb15eda63c4c4cfb0b02afee2e07fc28",
+  "backgrounds/kanna_dark_secondary.png": "43d2df1a2520bbadfe57690250f39954",
+  "stickers/jetbrains/dragonMaid/kanna/dark/kanna_dark_secondary.png": "426f39e8496501694d049eec124c72f9",
+  "backgrounds/kanna_dark_secondary.png.checksum.txt": "bbefd37e5db2e544c6f155396c3fbacf",
+  "stickers/jetbrains/dragonMaid/kanna/dark/kanna_dark_secondary.png.checksum.txt": "f90cf31bd47baf35edff6395463d14e1",
+  "stickers/vscode/dragonMaid/kanna/dark/kanna_dark.png": "8c3f5a208372713154b7b6a4e2a7c46e",
+  "stickers/vscode/dragonMaid/kanna/dark/kanna_dark.png.checksum.txt": "0e635b38c14c38c2d0b6b49a291b70e0",
+  "stickers/vscode/dragonMaid/kanna/dark/kanna_dark_secondary.png": "a85232031a4334a8fa57c100e7ddfa24",
+  "stickers/vscode/dragonMaid/kanna/dark/kanna_dark_secondary.png.checksum.txt": "30814ed047add64e7fb0c0f01707e7a4",
+  "misc/v10_girl.png": "74299d5023303162d3ca3fefd222b3d7",
+  "misc/v10_girl.png.checksum.txt": "b1ff619b34a2963b350b5bb58b0dd47b"
 }
