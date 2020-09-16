@@ -11,6 +11,7 @@ export const assetDirectories = [
   'stickers',
   'screenshots',
   'misc',
+  'promotion',
 ];
 
 export async function walkDir(dir: string): Promise<string[]> {
