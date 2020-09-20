@@ -7,8 +7,9 @@ node_modules
 src/DokiThemeDefinitions.ts
 src/ChangelogHtml.ts
 generatedThemes/*.json
-backgrounds/
-stickers/
 screenshots/
+!misc/am-i-online.txt
+!misc/am-i-online.txt.checksum.txt
+!misc/update_celebration.gif
+!misc/update_celebration.gif.checksum.txt
 misc/
-promotion/
