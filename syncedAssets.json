@@ -294,12 +294,12 @@
   "stickers/jetbrains/fate/rin/dark/rin_dark.png.checksum.txt": "854d7d1c96fb1d6ea37b8b2ebb63758c",
   "stickers/jetbrains/konoSuba/aqua/dark/aqua_dark.png.checksum.txt": "eb0ff112f033b88ff00a39ef2e12cb5e",
   "backgrounds/aqua_dark.png": "ce89d7903423bd87284eb6e42db6684a",
-  "backgrounds/ishtar_dark.png": "384f2612698460c6f3bc7d5eaf355869",
-  "backgrounds/ishtar_light.png": "384f2612698460c6f3bc7d5eaf355869",
+  "backgrounds/ishtar_dark.png": "f451bc38b2060ae7efa5dfde8c3526cd",
+  "backgrounds/ishtar_light.png": "3241ed87ee871b40aede943b0c70fcc2",
   "backgrounds/rin_dark.png": "17a39a39e4df3718dbcb2c0ac23148b0",
   "backgrounds/aqua_dark.png.checksum.txt": "e64cbd923bf354bd81bb032ade91e405",
-  "backgrounds/ishtar_dark.png.checksum.txt": "48b376bd581fdcd205cefc983520a799",
-  "backgrounds/ishtar_light.png.checksum.txt": "48b376bd581fdcd205cefc983520a799",
+  "backgrounds/ishtar_dark.png.checksum.txt": "0c3c89143c0db362b87499cc7093c44c",
+  "backgrounds/ishtar_light.png.checksum.txt": "f25394240e33b2debaa4c9d12b7f4b33",
   "backgrounds/rin_dark.png.checksum.txt": "3baea1d569483ea0fbad48338bf666e1",
   "stickers/jetbrains/gate/rory/dark/rory_dark.png": "b1e71481149d10888349c81d280a89f8",
   "stickers/jetbrains/gate/rory/dark/rory_dark.png.checksum.txt": "854d7d1c96fb1d6ea37b8b2ebb63758c",
@@ -309,6 +309,6 @@
   "stickers/jetbrains/fate/ishtar/dark/ishtar_dark.png.checksum.txt": "854d7d1c96fb1d6ea37b8b2ebb63758c",
   "stickers/jetbrains/fate/ishtar/light/ishtar_light.png": "b1e71481149d10888349c81d280a89f8",
   "stickers/jetbrains/fate/ishtar/light/ishtar_light.png.checksum.txt": "854d7d1c96fb1d6ea37b8b2ebb63758c",
-  "backgrounds/rory_dark_jetbrains.png": "a9f06ee887cd6f0792b0e2fdd6f16f2a",
-  "backgrounds/rory_dark_jetbrains.png.checksum.txt": "45d7bf7963713f2ada4066429357109a"
+  "backgrounds/rory_dark_jetbrains.png": "7b4f9c80d4df0abbe8ddd850bad99117",
+  "backgrounds/rory_dark_jetbrains.png.checksum.txt": "d7768a30133e69708ede2e747d668e93"
 }
