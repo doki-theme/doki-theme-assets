@@ -356,5 +356,9 @@
   "backgrounds/konata_dark_secondary.png": "18df8d98735d8cd14cacb7cf512c3090",
   "stickers/jetbrains/luckyStar/konata/dark/konata_dark_secondary.png": "04d0263ff6cf85ccff787a970017404e",
   "backgrounds/konata_dark_secondary.png.checksum.txt": "3ad26edfc0f4d8d330f67b2baa08b1b6",
-  "stickers/jetbrains/luckyStar/konata/dark/konata_dark_secondary.png.checksum.txt": "b4e6c910f311b30c8f634d03e125af9e"
+  "stickers/jetbrains/luckyStar/konata/dark/konata_dark_secondary.png.checksum.txt": "b4e6c910f311b30c8f634d03e125af9e",
+  "misc/v12_girls.png": "b1909f18bf585d38a605723a6a3bd2b7",
+  "misc/v12_girls_smol.png": "a5e9b6a7c08876847ef1dceeacc24b8c",
+  "misc/v12_girls.png.checksum.txt": "078bcc1451ad53e2f9c391254577b860",
+  "misc/v12_girls_smol.png.checksum.txt": "b5d917d6a795721b110624c4dcd3b365"
 }
