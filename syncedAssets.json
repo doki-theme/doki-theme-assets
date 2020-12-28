@@ -340,7 +340,7 @@
   "backgrounds/yukino_dark.png": "ec74353859d2840bc6d4677e1a18c414",
   "stickers/jetbrains/loveLive/umi/dark/umi_dark.png": "d879920a8cb33a4cb7103bdd277d7d37",
   "stickers/jetbrains/oreGairu/yukino/dark/yukino_dark.png": "e00922d35f44eddbe391ea96e1d9d168",
-  "stickers/jetbrains/reZero/echidna/dark/echidna_dark.png": "7b33ac5dbcb648ca76f5d0bfdec0ead6",
+  "stickers/jetbrains/reZero/echidna/dark/echidna_dark.png": "2f3b275a6468c34e127a43683a7ba5e7",
   "stickers/jetbrains/steinsGate/kurisu/dark/kurisu_dark.png": "84383305ea2b8403f0f88a9207622dfb",
   "stickers/jetbrains/swordArtOnline/asuna/dark/asuna_dark.png": "003be05c61b06f676a8c7797343a7b5f",
   "backgrounds/asuna_dark.png.checksum.txt": "d5eaca9176e23443bd654d533060c7ca",
@@ -350,7 +350,7 @@
   "backgrounds/yukino_dark.png.checksum.txt": "9f3125342b5dfb86b3de7c1c7edec0f5",
   "stickers/jetbrains/loveLive/umi/dark/umi_dark.png.checksum.txt": "dc9c1ed030677b940042e04d6c1c50b1",
   "stickers/jetbrains/oreGairu/yukino/dark/yukino_dark.png.checksum.txt": "bfe8804ed035cd85678682a4d676212d",
-  "stickers/jetbrains/reZero/echidna/dark/echidna_dark.png.checksum.txt": "3d4fc5ebb7dd39f501fd6bb112f4a808",
+  "stickers/jetbrains/reZero/echidna/dark/echidna_dark.png.checksum.txt": "9d34c204161756b060c11490da57e16a",
   "stickers/jetbrains/steinsGate/kurisu/dark/kurisu_dark.png.checksum.txt": "7e365031c1a992d755efc2c11baf0334",
   "stickers/jetbrains/swordArtOnline/asuna/dark/asuna_dark.png.checksum.txt": "41018e13ee7edc19ecdfc022e8bdc3f6",
   "backgrounds/konata_dark_secondary.png": "18df8d98735d8cd14cacb7cf512c3090",
@@ -360,5 +360,7 @@
   "misc/v12_girls.png": "b1909f18bf585d38a605723a6a3bd2b7",
   "misc/v12_girls_smol.png": "a5e9b6a7c08876847ef1dceeacc24b8c",
   "misc/v12_girls.png.checksum.txt": "078bcc1451ad53e2f9c391254577b860",
-  "misc/v12_girls_smol.png.checksum.txt": "b5d917d6a795721b110624c4dcd3b365"
+  "misc/v12_girls_smol.png.checksum.txt": "b5d917d6a795721b110624c4dcd3b365",
+  "misc/update_celebration_v2.gif": "6d29db804d81a74fb1994cf77a878ecf",
+  "misc/update_celebration_v2.gif.checksum.txt": "523f1077ac2e616661c1716233d1736d"
 }
