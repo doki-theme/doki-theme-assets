@@ -191,7 +191,7 @@ Promise.all(
   })
   .then(allNewAssets => {
     console.log('Staring asset sync');
-    return uploadUnsyncedAssets(Object.entries(allNewAssets))
+    return uploadUnsyncedAssets(toPairs(allNewAssets))
       .then(syncedAssets => syncedAssets
         .map(([key, value]) => ([buildKey(key), value]))
         .reduce((accum: StringDictionary<string>, kva) => {
