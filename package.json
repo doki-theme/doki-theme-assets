@@ -22,6 +22,6 @@
   "dependencies": {
     "aws-sdk": "^2.614.0",
     "file-type": "^14.1.2",
-    "lodash": "^4.17.19"
+    "lodash": "^4.17.21"
   }
 }
