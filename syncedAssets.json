@@ -1074,5 +1074,17 @@
   "misc/v16_girls.png.checksum.txt": "da708bdcd0d36e38fe129f64561d2d82",
   "misc/v16_girls_smol.png.checksum.txt": "0ffbf70dbb80a5327afc44492c087643",
   "misc/update_celebration_v6.gif": "6f55b8123278a309d59ef85ad2af36f2",
-  "misc/update_celebration_v6.gif.checksum.txt": "4dee226e89d57f9a2f6461ed5347f67f"
+  "misc/update_celebration_v6.gif.checksum.txt": "4dee226e89d57f9a2f6461ed5347f67f",
+  "backgrounds/coconut_dark.png": "cba885f97b8780cf4ddb8aa1d84a6c77",
+  "backgrounds/wallpapers/coconut_dark.png": "cba885f97b8780cf4ddb8aa1d84a6c77",
+  "backgrounds/wallpapers/transparent/coconut_dark.png": "cba885f97b8780cf4ddb8aa1d84a6c77",
+  "stickers/jetbrains/v2/nekoPara/coconut/dark/coconut_dark.png": "cba885f97b8780cf4ddb8aa1d84a6c77",
+  "stickers/smol/nekoPara/coconut/dark/coconut_dark.png": "a55667911acf372a6de6b00b73d7c790",
+  "stickers/vscode/nekoPara/coconut/dark/coconut_dark.png": "cba885f97b8780cf4ddb8aa1d84a6c77",
+  "backgrounds/coconut_dark.png.checksum.txt": "8ffa584f8e4e1e6f95880e1dd67602a6",
+  "backgrounds/wallpapers/coconut_dark.png.checksum.txt": "8ffa584f8e4e1e6f95880e1dd67602a6",
+  "backgrounds/wallpapers/transparent/coconut_dark.png.checksum.txt": "8ffa584f8e4e1e6f95880e1dd67602a6",
+  "stickers/jetbrains/v2/nekoPara/coconut/dark/coconut_dark.png.checksum.txt": "8ffa584f8e4e1e6f95880e1dd67602a6",
+  "stickers/smol/nekoPara/coconut/dark/coconut_dark.png.checksum.txt": "7e82b5ea12f5b9a95295cff45f7e6393",
+  "stickers/vscode/nekoPara/coconut/dark/coconut_dark.png.checksum.txt": "8ffa584f8e4e1e6f95880e1dd67602a6"
 }
