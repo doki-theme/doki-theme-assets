@@ -1283,5 +1283,17 @@
   "misc/v21_girl.png.checksum.txt": "7f98ccfb44f8032777051613a5ce21db",
   "misc/v21_girl_smol.png.checksum.txt": "ac3ee40125950352a52c35364c453e22",
   "misc/update_celebration_v10.gif": "4533e37feafb100e735407204d353c86",
-  "misc/update_celebration_v10.gif.checksum.txt": "d82c756e4cb7f1f9302f8496b2b8bb3e"
+  "misc/update_celebration_v10.gif.checksum.txt": "d82c756e4cb7f1f9302f8496b2b8bb3e",
+  "backgrounds/wallpapers/yotsuba_dark.png": "11b88da03182e8dea7b4874bde698aa1",
+  "backgrounds/yotsuba_dark.png": "11b88da03182e8dea7b4874bde698aa1",
+  "backgrounds/wallpapers/yotsuba_dark.png.checksum.txt": "fa3d4f753330d7acadf14834df40ab76",
+  "backgrounds/yotsuba_dark.png.checksum.txt": "fa3d4f753330d7acadf14834df40ab76",
+  "backgrounds/wallpapers/transparent/yotsuba_dark.png": "cba885f97b8780cf4ddb8aa1d84a6c77",
+  "stickers/jetbrains/v2/quintuplets/yotsuba/dark/yotsuba_dark.png": "2ed65f49def2f897ad21d42c9810504c",
+  "stickers/smol/quintuplets/yotsuba/dark/yotsuba_dark.png": "a55667911acf372a6de6b00b73d7c790",
+  "stickers/vscode/quintuplets/yotsuba/dark/yotsuba_dark.png": "fc63438cfd8b633af5638c8e9d7ca3cd",
+  "backgrounds/wallpapers/transparent/yotsuba_dark.png.checksum.txt": "8ffa584f8e4e1e6f95880e1dd67602a6",
+  "stickers/jetbrains/v2/quintuplets/yotsuba/dark/yotsuba_dark.png.checksum.txt": "0f8a691eb793420e1ac29d5159b90826",
+  "stickers/smol/quintuplets/yotsuba/dark/yotsuba_dark.png.checksum.txt": "7e82b5ea12f5b9a95295cff45f7e6393",
+  "stickers/vscode/quintuplets/yotsuba/dark/yotsuba_dark.png.checksum.txt": "3959e65f1091143d06137f7c85af9c75"
 }
