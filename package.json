@@ -20,7 +20,7 @@
     "typescript": "^3.7.5"
   },
   "dependencies": {
-    "aws-sdk": "^2.614.0",
+    "aws-sdk": "^2.814.0",
     "file-type": "^14.1.2",
     "lodash": "^4.17.21"
   }
