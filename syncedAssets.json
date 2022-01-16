@@ -1535,5 +1535,19 @@
   "misc/v19_girls_medium.png.checksum.txt": "3fa36c84001da89072e1e7efc975bb25",
   "misc/v20_girls_medium.png.checksum.txt": "39e8fbc5f71261f27235d2c6dadb2140",
   "misc/v21_girl_medium.png.checksum.txt": "3de4ebfbae311a8f834b921b578ee08e",
-  "misc/v22_girls_medium.png.checksum.txt": "71bd384471dea62d7321e35db1b1d2aa"
+  "misc/v22_girls_medium.png.checksum.txt": "71bd384471dea62d7321e35db1b1d2aa",
+  "backgrounds/nadeshiko_dark.png": "626ea1cedf59c8753d587faf3387f762",
+  "backgrounds/wallpapers/nadeshiko_dark.png": "626ea1cedf59c8753d587faf3387f762",
+  "backgrounds/wallpapers/transparent/nadeshiko_dark.png": "f387d18918ac9723007644530289a0c6",
+  "backgrounds/wallpapers/transparent/smol/nadeshiko_dark.png": "0d679f996f402fc97f789b81c9b162c7",
+  "stickers/jetbrains/v2/yuruCamp/nadeshiko/dark/nadeshiko_dark.png": "02da6a90f5e66a9a2ecb1793bde6471b",
+  "stickers/smol/yuruCamp/nadeshiko/dark/nadeshiko_dark.png": "a55667911acf372a6de6b00b73d7c790",
+  "stickers/vscode/yuruCamp/nadeshiko/dark/nadeshiko_dark.png": "8629647c5142741cfa7a9627010b7d18",
+  "backgrounds/nadeshiko_dark.png.checksum.txt": "01ae16d89c3955e50bdda3925caac81c",
+  "backgrounds/wallpapers/nadeshiko_dark.png.checksum.txt": "01ae16d89c3955e50bdda3925caac81c",
+  "backgrounds/wallpapers/transparent/nadeshiko_dark.png.checksum.txt": "35b6351025dec48155210a83a9fc6b8a",
+  "backgrounds/wallpapers/transparent/smol/nadeshiko_dark.png.checksum.txt": "4ae4396d6a63ed0ca5493bbdbf0cddee",
+  "stickers/jetbrains/v2/yuruCamp/nadeshiko/dark/nadeshiko_dark.png.checksum.txt": "ac16352e6df24d396ca576fc0dfab901",
+  "stickers/smol/yuruCamp/nadeshiko/dark/nadeshiko_dark.png.checksum.txt": "7e82b5ea12f5b9a95295cff45f7e6393",
+  "stickers/vscode/yuruCamp/nadeshiko/dark/nadeshiko_dark.png.checksum.txt": "eb161cfea95dd14268db5bc7be7c33ec"
 }
