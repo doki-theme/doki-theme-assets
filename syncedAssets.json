@@ -1597,5 +1597,15 @@
   "backgrounds/wallpapers/transparent/smol/rikka_dark.png.checksum.txt": "a59af763121e2070b5059df86a4b4ffd",
   "stickers/smol/chuunibyou/rikka/dark/rikka_dark.png.checksum.txt": "1b7c40004ee2fa26ae70ecfdfa6f2e45",
   "stickers/smol/railgun/mikoto/dark/mikoto_dark.png.checksum.txt": "ed1265750aabbe021ccda316dd12caa4",
-  "stickers/smol/shieldHero/raphtalia/dark/raphtalia_dark.png.checksum.txt": "ab95c2387f192f9ef55b287588daa4b8"
+  "stickers/smol/shieldHero/raphtalia/dark/raphtalia_dark.png.checksum.txt": "ab95c2387f192f9ef55b287588daa4b8",
+  "backgrounds/genos_dark.png": "dd2baf97d9f3be4df72fecfb99f52974",
+  "backgrounds/wallpapers/genos_dark.png": "dd2baf97d9f3be4df72fecfb99f52974",
+  "backgrounds/wallpapers/transparent/genos_dark.png": "f83532b3353c52b3c5509038d7cb720c",
+  "stickers/jetbrains/v2/onePunch/genos/dark/genos_dark.png": "58b173bb00cd67cc373ba8bb409ba199",
+  "stickers/vscode/onePunch/genos/dark/genos_dark.png": "1f963ccd04865bc75c9256511dacbf74",
+  "backgrounds/genos_dark.png.checksum.txt": "9f06f042ac27d65b34b1edc477b36df8",
+  "backgrounds/wallpapers/genos_dark.png.checksum.txt": "9f06f042ac27d65b34b1edc477b36df8",
+  "backgrounds/wallpapers/transparent/genos_dark.png.checksum.txt": "0063f8b6d4f7b601d084b4353a682063",
+  "stickers/jetbrains/v2/onePunch/genos/dark/genos_dark.png.checksum.txt": "894a1cd9af2f1679a63b3178502dd367",
+  "stickers/vscode/onePunch/genos/dark/genos_dark.png.checksum.txt": "29748fa31d334f84ad166d9e2ef59f28"
 }
