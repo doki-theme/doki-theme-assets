@@ -13,3 +13,4 @@ screenshots/
 !misc/update_celebration.gif
 !misc/update_celebration.gif.checksum.txt
 misc/
+.DS_Store*

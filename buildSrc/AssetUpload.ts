@@ -104,6 +104,10 @@ const uploadUnsyncedAssets = (workToBeDone: [string, string][]): Promise<[string
 
 console.log('Starting asset upload.');
 
+const isAssetNotExcluded = (assetPath: string): boolean => {
+  return assetPath.indexOf('.DS_Store') < 0
+}
+
 const scanDirectories = () => {
   console.log("Scanning asset directories");
   return assetDirectories.map(directory =>
@@ -114,10 +118,12 @@ Promise.all(
   scanDirectories()
 )
   .then(directories => directories.reduce((accum, dirs) => accum.concat(dirs), []))
+  .then(allAssets => allAssets.filter(isAssetNotExcluded))
   .then(allAssets => {
     console.log('Calculating differences');
     return Promise.all(
-      allAssets.map(assetPath =>
+      allAssets
+      .map(assetPath =>
         new Promise<Buffer>((res, rej) =>
           fs.readFile(assetPath, (err, dat) => {
             if (err) {

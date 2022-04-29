@@ -9,7 +9,6 @@ export const rootDirectory =
 export const assetDirectories = [
   'backgrounds',
   'stickers',
-  'screenshots',
   'misc',
   'promotion',
 ];
