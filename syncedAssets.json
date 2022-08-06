@@ -1843,5 +1843,19 @@
   "misc/best_girl_medium.png": "d4261be1d58b1c108382e0eda12f1856",
   "misc/best_girl_smol.png": "ecbb31ae16ddf23de460f1d0ce7e61db",
   "misc/best_girl_medium.png.checksum.txt": "cbc92a71ab73aa5db10c9e449a0827e1",
-  "misc/best_girl_smol.png.checksum.txt": "95be7e56c5040f36d0da3385ba4159b8"
+  "misc/best_girl_smol.png.checksum.txt": "95be7e56c5040f36d0da3385ba4159b8",
+  "backgrounds/rimuru_dark.png": "9980c74c4699f5e545d7c520e759bf99",
+  "backgrounds/wallpapers/rimuru_dark.png": "2d2780efe31c6871c30ca2f54ad7cf61",
+  "backgrounds/wallpapers/transparent/rimuru_dark.png": "e791af01b1e36ea58119cda68f081cdf",
+  "backgrounds/wallpapers/transparent/smol/rimuru_dark.png": "05fc9df10365475dd5adc31ce3c0c64b",
+  "stickers/jetbrains/v2/slime/rimuru/dark/rimuru_dark.png": "ca1e50677cc67416101621cab4d6e751",
+  "stickers/smol/slime/rimuru/dark/rimuru_dark.png": "771b807a2ae2cdea320b0e0bc747c57a",
+  "stickers/vscode/slime/rimuru/dark/rimuru_dark.png": "b06c2e90a04cf4fdf3c0cbe95b8dafea",
+  "backgrounds/rimuru_dark.png.checksum.txt": "e79be5868b485a6947ef10f1a0bd0e24",
+  "backgrounds/wallpapers/rimuru_dark.png.checksum.txt": "ad9ccab77dce410e0111caf26a638ca3",
+  "backgrounds/wallpapers/transparent/rimuru_dark.png.checksum.txt": "72423c3782167f018d9a3e372192e3b9",
+  "backgrounds/wallpapers/transparent/smol/rimuru_dark.png.checksum.txt": "4248efba643dce2028627a7375a038eb",
+  "stickers/jetbrains/v2/slime/rimuru/dark/rimuru_dark.png.checksum.txt": "8512cd7827e320477235de133bce6e8e",
+  "stickers/smol/slime/rimuru/dark/rimuru_dark.png.checksum.txt": "98d2cbf84e32e3069590044a09017f60",
+  "stickers/vscode/slime/rimuru/dark/rimuru_dark.png.checksum.txt": "d04e25b6013724cfa3b8a8d15c4fdfa0"
 }
